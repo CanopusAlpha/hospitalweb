@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sukhakarta multi-speaciality Clinic</title>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- normalize css -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <link rel="stylesheet" href="../Sukhakarta hospital website/about.html">
+</head>
+
+<body>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background: #131617;
+            overflow-x: hidden;
+        }
+
+        .main-section {
+            float: left;
+            width: 100%;
+            display: block;
+            background: #0A192F;
+            height: 100vh;
+        }
+
+        .container {
+            float: left;
+            width: 80%;
+            margin: -2rem 10%;
+        }
+
+        .fullwidth-container {
+            display: block;
+            width: 80%;
+            margin: 2rem 10%
+        }
+
+        /* #faqs {} */
+
+        .line-heading {
+            font-family: sans-serif;
+            color: #ccd6f6;
+            font-weight: 600;
+            line-height: 1.1;
+            display: flex;
+            align-items: center;
+            width: 90%;
+            margin: 70px 0 40px 10%;
+            white-space: nowrap;
+            font-size: 26px;
+            text-shadow: 1px 1px 1px rgb(0, 0, 0);
+        }
+
+        .line-heading:after {
+            content: "";
+            display: block;
+            position: relative;
+            width: 300px;
+            height: 1px;
+            margin: 0 0 0 20px;
+            background: rgba(204, 214, 246, .2);
+            text-shadow: none;
+            transition: all .6s ease-in-out 0s
+        }
+
+        .line-heading:hover:after {
+            width: 180px;
+            background: rgba(204, 214, 246, .6);
+        }
+
+        h3.large-heading {
+            font-family: sans-serif;
+            margin: 0 0 0 10%;
+            font-size: 52px;
+            line-height: 1.1;
+            letter-spacing: -.045em;
+            color: #fff;
+            text-shadow: 1px 1px 1px rgb(0 0 0);
+        }
+
+        /** The Faq Section **/
+        #faqSection div {
+            /* float: left; */
+            display: inline-block;
+            width: 46%;
+            margin: 0 2%;
+            overflow: hidden;
+        }
+
+        #faqSection .collapsible {
+            background-color: #112240;
+            border: 1px solid hsla(0, 0%, 51.4%, .16);
+            border-radius: 7px;
+            box-shadow: 0 10px 30px -15px rgb(0 0 0);
+            transition: box-shadow .2s ease 0s;
+            color: #ccd6f6;
+            margin: 0 0 8px;
+            width: 100%;
+            padding: 12px;
+            font-family: sans-serif;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        #faqSection .collapsible:hover {
+            box-shadow: 0 10px 60px -15px rgba(0, 0, 0, 1);
+        }
+
+
+        #faqSection .collapsible:after {
+            content: "\002B";
+            font-weight: bold;
+            float: right;
+            margin-left: 5px
+        }
+
+        #faqSection .active:after {
+            content: "\2212"
+        }
+
+        #faqSection .faq-content {
+            overflow: hidden;
+            width: calc(100% - 8%);
+            padding: 5px 2%;
+            transition: all .25s ease-in-out 0s;
+            background: #0b1629;
+            border: 1px solid hsla(0, 0%, 51.4%, .16);
+            border-radius: 7px;
+            max-height: 0px;
+            visibility: hidden;
+        }
+
+        #faqSection .faq-content p {
+            font-family: sans-serif;
+            color: #c2c2c2;
+            line-height: 140%;
+            font-size: 14px;
+            margin: 0 0 12px;
+            text-shadow: 1px 1px 0 rgb(0 0 0 / 80%);
+            font-weight: 100;
+        }
+
+        #faqSection .faq-content a {
+            color: #00C58E;
+            font-weight: 600;
+            letter-spacing: .05rem;
+        }
+
+        #faqSection .faq-content ul {
+            border-left: 2px solid #00C58E
+        }
+
+        #faqSection .faq-content li {
+            color: #bad2e2;
+            font-size: .85rem;
+            line-height: 160%;
+            font-weight: 200;
+            margin: 8px 0 8px 2%;
+            list-style: none;
+            width: 90%;
+            font-family: sans-serif;
+            text-shadow: 1px 1px 0 rgb(0 0 0);
+        }
+
+        .myFooter {
+            float: left;
+            width: 100%;
+            display: block;
+            background: #0A192F;
+            text-align: center;
+            height: 10vh
+        }
+
+        .myFooter p {
+            color: #fff;
+            font-family: sans-serif;
+            text-shadow: 1px 1px 0 rgb(0 0 0);
+        }
+
+        .myFooter a {
+            color: #00C58E;
+            text-decoration: none
+        }
+    </style>
+
+    <!-- header -->
+    <header class="header bg-blue">
+        <nav class="navbar bg-blue">
+            <div class="container flex">
+                <a href="index.html" class="navbar-brand">
+                    <img src="images/logo.png" alt="site logo">
+                </a>
+                <button type="button" class="navbar-show-btn">
+                    <img src="images/ham-menu-icon.png">
+                </button>
+
+                <div class="navbar-collapse bg-white">
+                    <button type="button" class="navbar-hide-btn">
+                        <img src="images/close-icon.png">
+                    </button>
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a href="../index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../about.html" class="nav-link">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../services.html" class="nav-link">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="FAQs.html" class="nav-link">FAQs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../gallery.html" class="nav-link">Gallery</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../testimonial.html" class="nav-link">Testimonials</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../contact.html" class="nav-link">Contact Us</a>
+                        </li>
+                    </ul>
+                    <div class="search-bar">
+                        <form>
+                            <div class="search-bar-box flex">
+                                <span class="search-icon flex">
+                                    <img src="images/search-icon-dark.png">
+                                </span>
+                                <input type="search" class="search-control" placeholder="Search here">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="body">This is FAQs Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti architecto nemo
+        quos fugiat nesciunt velit cum similique suscipit nisi repellendus.</div>
+
+
+
+
+    <!-- FAQs -->
+    <section class="main-section">
+        <div id="faqs" class="container">
+            <h2 class="line-heading">Frequently Asked Questions</h2>
+            <h3 class="large-heading">Some of the most common questions asked about Website Design & Development.</h3>
+            <div id="faqSection" class="fullwidth-container">
+                <div>
+                    <button class="collapsible">Do you work full time as a developer?</button>
+                    <div class="faq-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat neque eu odio
+                            convallis,
+                            porta consequat erat rhoncus. Curabitur vulputate porttitor lectus, vitae tincidunt dolor
+                            eleifend vitae. Praesent sollicitudin eros in finibus posuere. Quisque at turpis arcu. Sed
+                            condimentum elit ac elit rhoncus, volutpat feugiat orci accumsan. Maecenas tincidunt diam
+                            odio,
+                            sit amet tincidunt est tincidunt at. Suspendisse luctus dolor quis aliquam pulvinar. Ut non
+                            neque in lorem ullamcorper faucibus. In et neque in sem ultrices mattis. Duis eu mauris
+                            urna.
+                            Suspendisse vitae suscipit odio, suscipit convallis odio. Integer at consectetur sapien.
+                            Mauris
+                            ex tortor, gravida vel diam sit amet, congue ullamcorper enim. Curabitur viverra bibendum
+                            leo,
+                            et condimentum enim efficitur eu. Ut euismod finibus ligula at volutpat. Nulla sit amet sem
+                            non
+                            elit posuere fringilla in eu justo.</p>
+                    </div>
+                    <button class="collapsible">Do you require a deposit before working?</button>
+                    <div class="faq-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat neque eu odio
+                            convallis,
+                            porta consequat erat rhoncus. Curabitur vulputate porttitor lectus, vitae tincidunt dolor
+                            eleifend vitae. Praesent sollicitudin eros in finibus posuere. Quisque at turpis arcu. Sed
+                            condimentum elit ac elit rhoncus, volutpat feugiat orci accumsan. Maecenas tincidunt diam
+                            odio,
+                            sit amet tincidunt est tincidunt at. Suspendisse luctus dolor quis aliquam pulvinar. Ut non
+                            neque in lorem ullamcorper faucibus. In et neque in sem ultrices mattis. Duis eu mauris
+                            urna.
+                            Suspendisse vitae suscipit odio, suscipit convallis odio. Integer at consectetur sapien.
+                            Mauris
+                            ex tortor, gravida vel diam sit amet, congue ullamcorper enim. Curabitur viverra bibendum
+                            leo,
+                            et condimentum enim efficitur eu. Ut euismod finibus ligula at volutpat. Nulla sit amet sem
+                            non
+                            elit posuere fringilla in eu justo.</p>
+                    </div>
+                    <button class="collapsible">Will I own the website?</button>
+                    <div class="faq-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat neque eu odio
+                            convallis,
+                            porta consequat erat rhoncus. Curabitur vulputate porttitor lectus, vitae tincidunt dolor
+                            eleifend vitae. Praesent sollicitudin eros in finibus posuere. Quisque at turpis arcu. Sed
+                            condimentum elit ac elit rhoncus, volutpat feugiat orci accumsan. Maecenas tincidunt diam
+                            odio,
+                            sit amet tincidunt est tincidunt at. Suspendisse luctus dolor quis aliquam pulvinar. Ut non
+                            neque in lorem ullamcorper faucibus. In et neque in sem ultrices mattis. Duis eu mauris
+                            urna.
+                            Suspendisse vitae suscipit odio, suscipit convallis odio. Integer at consectetur sapien.
+                            Mauris
+                            ex tortor, gravida vel diam sit amet, congue ullamcorper enim. Curabitur viverra bibendum
+                            leo,
+                            et condimentum enim efficitur eu. Ut euismod finibus ligula at volutpat. Nulla sit amet sem
+                            non
+                            elit posuere fringilla in eu justo.</p>
+                    </div>
+                    <button class="collapsible">Are there other costs involved?</button>
+                    <div class="faq-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat neque eu odio
+                            convallis,
+                            porta consequat erat rhoncus. Curabitur vulputate porttitor lectus, vitae tincidunt dolor
+                            eleifend vitae. Praesent sollicitudin eros in finibus posuere. Quisque at turpis arcu. Sed
+                            condimentum elit ac elit rhoncus, volutpat feugiat orci accumsan. Maecenas tincidunt diam
+                            odio,
+                            sit amet tincidunt est tincidunt at. Suspendisse luctus dolor quis aliquam pulvinar. Ut non
+                            neque in lorem ullamcorper faucibus. In et neque in sem ultrices mattis. Duis eu mauris
+                            urna.
+                            Suspendisse vitae suscipit odio, suscipit convallis odio. Integer at consectetur sapien.
+                            Mauris
+                            ex tortor, gravida vel diam sit amet, congue ullamcorper enim. Curabitur viverra bibendum
+                            leo,
+                            et condimentum enim efficitur eu. Ut euismod finibus ligula at volutpat. Nulla sit amet sem
+                            non
+                            elit posuere fringilla in eu justo.</p>
+                        <ul>
+                            <li>Custom LI</li>
+                            <li>Custom LI</li>
+                        </ul>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat neque eu odio
+                            convallis,
+                            porta consequat erat rhoncus. Curabitur vulputate porttitor lectus, vitae tincidunt dolor
+                            eleifend vitae. Praesent sollicitudin eros in finibus posuere. Quisque at turpis arcu. Sed
+                            condimentum elit ac elit rhoncus, volutpat feugiat orci accumsan.Contact me via <a
+                                href="mailto:#" target="_blank">EMAIL</a> and I will be more than happy to answer your
+                            queries.</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="collapsible">What is hosting? Will I need it?</button>
+                    <div class="faq-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat neque eu odio
+                            convallis,
+                            porta consequat erat rhoncus. Curabitur vulputate porttitor lectus, vitae tincidunt dolor
+                            eleifend vitae. Praesent sollicitudin eros in finibus posuere. Quisque at turpis arcu. Sed
+                            condimentum elit ac elit rhoncus, volutpat feugiat orci accumsan.</p>
+                        <p>Maecenas tincidunt diam odio, sit amet tincidunt est tincidunt at. Suspendisse luctus dolor
+                            quis
+                            aliquam pulvinar. Ut non neque in lorem ullamcorper faucibus. In et neque in sem ultrices
+                            mattis. Duis eu mauris urna. Suspendisse vitae suscipit odio, suscipit convallis odio.
+                            Integer
+                            at consectetur sapien. Mauris ex tortor, gravida vel diam sit amet, congue ullamcorper enim.
+                            Curabitur viverra bibendum leo, et condimentum enim efficitur eu. Ut euismod finibus ligula
+                            at
+                            volutpat. Nulla sit amet sem non elit posuere fringilla in eu justo.</p>
+                    </div>
+                    <button class="collapsible">Will you work for equity on a new idea I have?</button>
+                    <div class="faq-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat neque eu odio
+                            convallis,
+                            porta consequat erat rhoncus. Curabitur vulputate porttitor lectus, vitae tincidunt dolor
+                            eleifend vitae. Praesent sollicitudin eros in finibus posuere. Quisque at turpis arcu. Sed
+                            condimentum elit ac elit rhoncus, volutpat feugiat orci accumsan.</p>
+                        <p>Maecenas tincidunt diam odio, sit amet tincidunt est tincidunt at. Suspendisse luctus dolor
+                            quis
+                            aliquam pulvinar. Ut non neque in lorem ullamcorper faucibus. In et neque in sem ultrices
+                            mattis. Duis eu mauris urna. Suspendisse vitae suscipit odio, suscipit convallis odio.
+                            Integer
+                            at consectetur sapien. Mauris ex tortor, gravida vel diam sit amet, congue ullamcorper enim.
+                            Curabitur viverra bibendum leo, et condimentum enim efficitur eu. Ut euismod finibus ligula
+                            at
+                            volutpat. Nulla sit amet sem non elit posuere fringilla in eu justo.</p>
+                    </div>
+                    <button class="collapsible">How much experience do you have?</button>
+                    <div class="faq-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat neque eu odio
+                            convallis,
+                            porta consequat erat rhoncus. Curabitur vulputate porttitor lectus, vitae tincidunt dolor
+                            eleifend vitae. Praesent sollicitudin eros in finibus posuere. Quisque at turpis arcu. Sed
+                            condimentum elit ac elit rhoncus, volutpat feugiat orci accumsan.</p>
+                    </div>
+                    <button class="collapsible">What if I need changes. Can I edit it myself?</button>
+                    <div class="faq-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec consequat neque eu odio
+                            convallis,
+                            porta consequat erat rhoncus. Curabitur vulputate porttitor lectus, vitae tincidunt dolor
+                            eleifend vitae. Praesent sollicitudin eros in finibus posuere. Quisque at turpis arcu. Sed
+                            condimentum elit ac elit rhoncus, volutpat feugiat orci accumsan.</p>
+                        <p>Maecenas tincidunt diam odio, sit amet tincidunt est tincidunt at. Suspendisse luctus dolor
+                            quis
+                            aliquam pulvinar. Ut non neque in lorem ullamcorper faucibus. In et neque in sem ultrices
+                            mattis. Duis eu mauris urna. Suspendisse vitae suscipit odio, suscipit convallis odio.
+                            Integer
+                            at consectetur sapien. Mauris ex tortor, gravida vel diam sit amet, congue ullamcorper enim.
+                            Curabitur viverra bibendum leo, et condimentum enim efficitur eu. Ut euismod finibus ligula
+                            at
+                            volutpat. Nulla sit amet sem non elit posuere fringilla in eu justo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <!-- footer  -->
+    <footer id = "footer" class = "footer text-center">
+        <div class = "container">
+            <div class = "footer-inner text-white py grid">
+                <div class = "footer-item">
+                    <h3 class = "footer-head">about us</h3>
+                    <div class = "icon">
+                        <img src = "images/logo.png">
+                    </div>
+                    <p class = "text text-md">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis saepe incidunt fugiat optio corporis ea!</p>
+                    <address>
+                        Medic Clinic <br>
+                        69 Deerpark Rd, Mount Merrion <br>
+                        Co. Dublin, A94 E9D3 <br>
+                        Ireland
+                    </address>
+                </div>
+
+                <div class = "footer-item">
+                    <h3 class = "footer-head">tags</h3>
+                    <ul class = "tags-list flex">
+                        <li>medical care</li>
+                        <li>emergency</li>
+                        <li>therapy</li>
+                        <li>surgery</li>
+                        <li>medication</li>
+                        <li>nurse</li>
+                    </ul>
+                </div>
+
+                <div class = "footer-item">
+                    <h3 class = "footer-head">Quick Links</h3>
+                    <ul>
+                        <li><a href = "#" class = "text-white">Our Services</a></li>
+                        <li><a href = "#" class = "text-white">Our Plan</a></li>
+                        <li><a href = "#" class = "text-white">Privacy Policy</a></li>
+                        <li><a href = "#" class = "text-white">Appointment Schedule</a></li>
+                    </ul>
+                </div>
+
+                <div class = "footer-item">
+                    <h3 class = "footer-head">make an appointment</h3>
+                    <p class = "text text-md">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, omnis.</p>
+                    <ul class = "appointment-info">
+                        <li>8:00 AM - 11:00 AM</li>
+                        <li>2:00 PM - 05:00 PM</li>
+                        <li>8:00 PM - 11:00 PM</li>
+                        <li>
+                            <i class = "fas fa-envelope"></i>
+                            <span>revomedic@gmail.com</span>
+                        </li>
+                        <li>
+                            <i class = "fas fa-phone"></i>
+                            <span>+003 478 2834(00)</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class = "footer-links">
+                <ul class = "flex">
+                    <li><a href = "#" class = "text-white flex"> <i class = "fab fa-facebook-f"></i></a></li>
+                    <li><a href = "#" class = "text-white flex"> <i class = "fab fa-twitter"></i></a></li>
+                    <li><a href = "#" class = "text-white flex"> <i class = "fab fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <!-- end of footer  -->
+    </section>
+
+    
+</body>
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.style.visibility = "hidden";
+                content.style.margin = "0 2%";
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+                content.style.visibility = "visible";
+                content.style.margin = "12px 2%";
+            }
+        });
+    }
+</script>
